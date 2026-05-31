@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "clicks=0": { "model": "chakchakmod:block/syringe_block_0" },
+    "clicks=1": { "model": "chakchakmod:block/syringe_block_1" },
+    "clicks=2": { "model": "chakchakmod:block/syringe_block_2" }
+  }
+}

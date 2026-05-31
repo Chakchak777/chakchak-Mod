@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chakchakmod:block/Leaflet",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "chakchakmod:block/Leaflet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "chakchakmod:block/Leaflet",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "chakchakmod:block/Leaflet",
+      "y": 90
+    }
+  }
+}
