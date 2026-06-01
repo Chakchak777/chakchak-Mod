@@ -2,6 +2,7 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
+	"render_type": "minecraft:translucent",
 	"textures": {
 		"1": "chakchakmod:item/syringe"
 	},

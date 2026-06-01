@@ -1,17 +1,18 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
 	"render_type": "minecraft:translucent",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "chakchakmod:item/empty_bottle_of_vodka",
-		"particle": "chakchakmod:item/empty_bottle_of_vodka"
+		"0": "chakchakmod:block/vodka",
+		"particle": "chakchakmod:block/vodka"
 	},
 	"elements": [
 		{
-			"from": [6, 4, 4],
-			"to": [9, 15, 12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [7, 7, 7]},
+			"from": [6.5, 0, 4],
+			"to": [9.5, 11, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.5, 3, 7]},
 			"faces": {
 				"north": {"uv": [0, 5.5, 1.5, 11], "texture": "#0"},
 				"east": {"uv": [0, 0, 4, 5.5], "texture": "#0"},
@@ -22,9 +23,9 @@
 			}
 		},
 		{
-			"from": [6.5, 15, 7],
-			"to": [8.5, 18, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [6, 15, 7]},
+			"from": [7, 11, 7],
+			"to": [9, 14, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.5, 11, 7]},
 			"faces": {
 				"north": {"uv": [6, 5.5, 7, 7], "texture": "#0"},
 				"east": {"uv": [7, 5.5, 8, 7], "texture": "#0"},

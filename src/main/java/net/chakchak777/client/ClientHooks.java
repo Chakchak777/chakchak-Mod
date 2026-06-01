@@ -13,7 +13,8 @@ public class ClientHooks {
     }
 
     public static void handleTotemAnimation(TotemAnimationPacket packet, IPayloadContext context) {
-        context.enqueueWork(() -> ClientEffectsHelper.showTotemAnimation(
-                new ItemStack(ModItems.CATOST_FIGURINE.get())));
+
+        context.enqueueWork(() -> ClientEffectsHelper.showTotemAnimation(packet.itemStack()));
     }
+
 }

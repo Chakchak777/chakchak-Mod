@@ -1,4 +1,6 @@
 package net.chakchak777.entities.dialogue;
 
-public record DialogueScenario() {
+import java.util.List;
+
+public record DialogueScenario(boolean startsWithoutAnim, List<DialogueLine> lines) {
 }

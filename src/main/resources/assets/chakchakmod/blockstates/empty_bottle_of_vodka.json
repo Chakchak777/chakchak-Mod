@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "clicks=0,facing=north": { "model": "chakchakmod:block/empty_bottle_of_vodka_0", "y": 90 },
+    "clicks=0,facing=south": { "model": "chakchakmod:block/empty_bottle_of_vodka_0", "y": 270 },
+    "clicks=0,facing=east":  { "model": "chakchakmod:block/empty_bottle_of_vodka_0", "y": 180 },
+    "clicks=0,facing=west":  { "model": "chakchakmod:block/empty_bottle_of_vodka_0", "y": 0 },
+
+    "clicks=1,facing=north": { "model": "chakchakmod:block/empty_bottle_of_vodka_1", "y": 90 },
+    "clicks=1,facing=south": { "model": "chakchakmod:block/empty_bottle_of_vodka_1", "y": 270 },
+    "clicks=1,facing=east":  { "model": "chakchakmod:block/empty_bottle_of_vodka_1", "y": 180 },
+    "clicks=1,facing=west":  { "model": "chakchakmod:block/empty_bottle_of_vodka_1", "y": 0 },
+
+    "clicks=2,facing=north": { "model": "chakchakmod:block/empty_bottle_of_vodka_2", "y": 90 },
+    "clicks=2,facing=south": { "model": "chakchakmod:block/empty_bottle_of_vodka_2", "y": 270 },
+    "clicks=2,facing=east":  { "model": "chakchakmod:block/empty_bottle_of_vodka_2", "y": 180 },
+    "clicks=2,facing=west":  { "model": "chakchakmod:block/empty_bottle_of_vodka_2", "y": 0 }
+  }
+}

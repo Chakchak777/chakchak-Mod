@@ -4,7 +4,6 @@ import net.chakchak777.ChakchakMod;
 import net.chakchak777.blocks.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -18,15 +17,21 @@ public class ModCreativeModTab {
 
 
     public static final Supplier<CreativeModeTab> CHAKCHAK_MOD_CREATIVE_TAB = CREATIVE_MODE_TAB.register("classic_vortex_items_tab",
-            ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.VODKA.get()))
+            ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.VODKA.asItem()))
                     .title(Component.translatable("creativetab.chakchakmod"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModItems.CATOST_SPAWN_EGG);
                         output.accept(ModItems.CATOST_FIGURINE);
                         output.accept(ModItems.CAT_FOOD);
-                        output.accept(ModItems.VODKA);
-                        output.accept(ModItems.EMPTY_BOTTLE_OF_VODKA);
+                        output.accept(ModBlocks.VODKA.asItem());
+                        output.accept(ModBlocks.EMPTY_BOTTLE_OF_VODKA.asItem());
+                        output.accept(ModBlocks.SYRINGE_BLOCK);
+                        output.accept(ModBlocks.WALlPAPER_BLOCK);
+                        output.accept(ModBlocks.WALlPAPER_BLOCK2);
+                        output.accept(ModBlocks.WALlPAPER_BLOCK3);
+                        output.accept(ModBlocks.WALlPAPER_BLOCK4);
+
 
 
                     }).build());

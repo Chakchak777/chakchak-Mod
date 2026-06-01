@@ -1,17 +1,18 @@
 package net.chakchak777.items;
 
 import net.chakchak777.ChakchakMod;
+import net.chakchak777.blocks.custom.VodkaBlock;
 import net.chakchak777.entities.ModEntities;
 import net.chakchak777.items.custom.Syringe;
-import net.chakchak777.items.custom.Vodka;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
@@ -51,32 +52,8 @@ public class ModItems {
                 }
             });
 
-    public static final DeferredItem<Vodka> VODKA = ITEMS.registerItem(
-            "vodka",
-            properties -> new Vodka(properties
 
-                    .food(ModFoodProperties.VODKA).stacksTo(1)){
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 
-                    tooltipComponents.add(Component.literal("Чистая водка. Говорят, если выпить, то станет хорошим оружием ближнего боя")
-                            .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
-
-    public static final DeferredItem<SwordItem> EMPTY_BOTTLE_OF_VODKA = ITEMS.register("empty_bottle_of_vodka",
-            ()->new SwordItem(Tiers.WOOD, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(Tiers.WOOD, 4, 2))
-            ){
-                @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-
-                    tooltipComponents.add(Component.literal("Ты рил выпил? Ну ок. У бутылки сильный урон кстати")
-                            .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
 
     public static final DeferredItem<Syringe> SYRINGE = ITEMS.registerItem(
             "syringe",
