@@ -4,7 +4,8 @@
 	"ambientocclusion": false,
 	"render_type": "minecraft:translucent",
 	"textures": {
-		"1": "chakchakmod:item/syringe"
+		"1": "chakchakmod:item/syringe",
+		"particle": "chakchakmod:item/syringe"
 	},
 	"elements": [
 		{

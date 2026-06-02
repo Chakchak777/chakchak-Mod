@@ -4,7 +4,7 @@ import net.chakchak777.blocks.ModBlocks;
 import net.chakchak777.entities.base.ChakchakGeckoDialogueMob;
 import net.chakchak777.entities.dialogue.DialogueScenario;
 import net.chakchak777.items.ModItems;
-import net.chakchak777.network.DialoguePacket;
+import net.chakchak777.network.SentDialogueLine;
 import net.chakchak777.quest.QuestAdvancements;
 import net.chakchak777.quest.QuestDefinitions;
 import net.chakchak777.network.TotemAnimationPacket;
@@ -58,9 +58,7 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
 
     @Override
     protected InteractionResult mobInteract(Player player, InteractionHand hand) {
-        System.out.println("после интеракт");
         if (hand == InteractionHand.MAIN_HAND) {
-            System.out.println("после первого иф" );
             ItemStack itemStack = player.getItemInHand(InteractionHand.MAIN_HAND);
 
             if (player.isCreative() && player.isShiftKeyDown()) {
@@ -96,8 +94,13 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
                 }
                 return InteractionResult.sidedSuccess(level().isClientSide);
             }
-            if (!level().isClientSide){
-                startDialogue(player);
+            if (!level().isClientSide) {
+                if (VodkaReward && (getCurrentScenario() == 2)) {
+                    getVodkaReward(player, (ServerLevel) this.level());
+                    return InteractionResult.PASS;
+                } else {
+                    startDialogue(player);
+                }
             }
             return InteractionResult.sidedSuccess(level().isClientSide);
 
@@ -135,7 +138,7 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
     @Override
     protected void onDialogueEnded(ServerPlayer player, int currentScenario) {
         if (currentScenario == 2) {
-            getVodkaRewarg(player,(ServerLevel) this.level());
+            getVodkaReward(player, (ServerLevel) this.level());
 
 
         }
@@ -143,20 +146,21 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
         ;
     }
 
-    private void getVodkaRewarg(Player player, ServerLevel serverLevel) {
+    private void getVodkaReward(Player player, ServerLevel serverLevel) {
 
         if (!(player instanceof ServerPlayer serverPlayer)) {
             return;
         }
 
         if (this.VodkaReward) {
-            PacketDistributor.sendToPlayer(serverPlayer, new DialoguePacket("Брат, чекушку я тебе уже отдал, это одноразовое предложение", "catost"));
-
-            ServerLevel level = serverPlayer.serverLevel();
-            var server = level.getServer();
-            server.tell(new net.minecraft.server.TickTask(
-                    server.getTickCount() + 100,
-                    () -> PacketDistributor.sendToPlayer(serverPlayer, new DialoguePacket("", ""))));
+            PacketDistributor.sendToPlayersNear(
+                    serverLevel,
+                    null,
+                    this.getX(),
+                    this.getY(),
+                    this.getZ(),
+                    10,
+                    new SentDialogueLine("Брат, чекушку я тебе уже отдал, это одноразовое предложение", "catost", 60));
             return;
         }
 
@@ -179,7 +183,7 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
                 0.02
         );
 
-        PacketDistributor.sendToPlayer(serverPlayer, new TotemAnimationPacket(new ItemStack(ModItems.CATOST_FIGURINE.get())));
+        PacketDistributor.sendToAllPlayers( new TotemAnimationPacket(new ItemStack(ModItems.CATOST_FIGURINE.get())));
 
 
     }
@@ -213,7 +217,6 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
     }
-
 }
 
 

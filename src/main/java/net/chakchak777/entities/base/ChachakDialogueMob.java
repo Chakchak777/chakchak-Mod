@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -103,9 +104,19 @@ public abstract class ChachakDialogueMob extends PathfinderMob implements Dialog
             return;
         }
 
-        DialogueLine line =getScenario().lines().get(this.currentStep);
-        PacketDistributor.sendToPlayer(this.dialoguePlayer, new DialoguePacket(line.text(), line.icon()));
-        this.timer = line.ticks();
+        DialogueLine line = getScenario().lines().get(this.currentStep);
+
+        if (this.level() instanceof ServerLevel serverLevel) {
+            PacketDistributor.sendToPlayersNear(
+                    serverLevel,
+                    null,
+                    this.getX(),
+                    this.getY(),
+                    this.getZ(),
+                    10,
+                    new DialoguePacket(line.text(), line.icon()));
+            this.timer = line.ticks();
+        }
     }
 
 

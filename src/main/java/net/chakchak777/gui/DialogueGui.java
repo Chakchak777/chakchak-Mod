@@ -1,6 +1,7 @@
 package net.chakchak777.gui;
 
 import net.chakchak777.client.DialogueClientState;
+import net.chakchak777.client.DialogueLineClientState;
 import net.chakchak777.client.ModGuiTextures;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -28,7 +29,12 @@ public class DialogueGui implements LayeredDraw.Layer {
 
     @Override
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
-        if (!DialogueClientState.isVisible()) {
+
+        boolean isDialogueActive = DialogueClientState.isVisible();
+        boolean isLineActive = DialogueLineClientState.isVisible();
+
+
+        if (!isDialogueActive&&!isLineActive) {
             return;
         }
 
@@ -41,8 +47,16 @@ public class DialogueGui implements LayeredDraw.Layer {
         PlayerSkin playerSkin = player.getSkin();
 
         Font font = mc.font;
-        String text = DialogueClientState.getCurrentText();
-        String icon = DialogueClientState.getCurrentIcon();
+        String text;
+        String icon;
+
+        if (isLineActive) {
+            text = DialogueLineClientState.getText();
+            icon = DialogueLineClientState.getIcon();
+        } else {
+            text = DialogueClientState.getCurrentText();
+            icon = DialogueClientState.getCurrentIcon();
+        }
 
         int screenWidth = guiGraphics.guiWidth();
         int screenHeight = guiGraphics.guiHeight();

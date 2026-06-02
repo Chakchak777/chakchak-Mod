@@ -2,14 +2,19 @@
   "item.chakchakmod.catost_spawn_egg": "Яйцо Призыва Котости",
   "item.chakchakmod.catost_figurine": "Фигурка Котости",
   "item.chakchakmod.cat_food": "Кошачий корм",
-  "item.chakchakmod.empty_bottle_of_vodka": "Пустая Бутылка Из Под Водки",
-  "item.chakchakmod.vodka": "Чекушка",
   "item.chakchakmod.syringe": "Шприц",
-  "item.chakchakmod.syringe_block": "Блок Шприцов",
-  "item.chakchakmod.wallpaper": "Обои",
-  "item.chakchakmod.wallpaper2": "Обои 2 Вид",
-  "item.chakchakmod.wallpaper3": "Обои 3 Вид",
-  "item.chakchakmod.wallpaper4": "Обои 4 Вид",
+  "item.chakchakmod.mango": "Maнго",
+
+
+
+  "block.chakchakmod.leaflet": "Листовка",
+  "block.chakchakmod.empty_bottle_of_vodka": "Пустая Бутылка Из Под Водки",
+  "block.chakchakmod.vodka": "Чекушка",
+  "block.chakchakmod.syringe_block": "Блок Шприцов",
+  "block.chakchakmod.wallpaper": "Обои",
+  "block.chakchakmod.wallpaper2": "Обои 2 Вид",
+  "block.chakchakmod.wallpaper3": "Обои 3 Вид",
+  "block.chakchakmod.wallpaper4": "Обои 4 Вид",
 
 
   "creativetab.chakchakmod": "Chakchak Mod",

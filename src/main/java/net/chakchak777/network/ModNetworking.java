@@ -7,6 +7,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
+import java.time.format.TextStyle;
+
 @EventBusSubscriber(modid = ChakchakMod.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModNetworking {
 
@@ -22,6 +24,11 @@ public class ModNetworking {
                 TotemAnimationPacket.TYPE,
                 TotemAnimationPacket.STREAM_CODEC,
                 ClientHooks::handleTotemAnimation
+        );
+        registrar.playToClient(
+                SentDialogueLine.TYPE,
+                SentDialogueLine.STREAM_CODEC,
+                ClientHooks::handleDialogueLine
         );
     }
 }

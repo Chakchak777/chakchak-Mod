@@ -67,6 +67,17 @@ public class ModItems {
                 }
             });
 
+    public static final DeferredItem<Item> MANGO = ITEMS.register("mango",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.MANGO).rarity(Rarity.RARE).stacksTo(16)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+
+                    tooltipComponents.add(Component.literal("Манго, манго, манго тутутурутутуруру")
+                            .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
 
 
 

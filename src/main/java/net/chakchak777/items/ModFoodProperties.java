@@ -9,4 +9,7 @@ public class ModFoodProperties {
             .effect(()->new MobEffectInstance(MobEffects.CONFUSION, 100,1),1).build();
 
     public static final FoodProperties VODKA=new FoodProperties.Builder().nutrition(1).saturationModifier(1).alwaysEdible().build();
+
+    public static final FoodProperties MANGO=new FoodProperties.Builder().alwaysEdible().effect(()-> new MobEffectInstance(MobEffects
+            .REGENERATION, 100, 1),1).build();
 }
