@@ -36,8 +36,8 @@ public abstract class ChachakDialogueMob extends PathfinderMob implements Dialog
 
     private int currentScenario = 0;
     private int currentStep = 0;
-    private int timer = 0;
-    private boolean isPlaying = false;
+    protected int timer = 0;
+    protected boolean isPlaying = false;
     private ServerPlayer dialoguePlayer;
 
     protected abstract List<DialogueScenario> getScenarios();
@@ -76,7 +76,7 @@ public abstract class ChachakDialogueMob extends PathfinderMob implements Dialog
 
         applyScenarioPose();
         player.sendSystemMessage(Component.literal("Сценарий: " + (this.currentScenario + 1)
-                + (getScenario().startsWithoutAnim() ? " (With anim)" : " (Without anim)")));
+                + (getScenario().startsWithoutAnim() ? " (Without anim)" : " (With anim)")));
     }
 
     public void stopAnim() {
@@ -121,7 +121,7 @@ public abstract class ChachakDialogueMob extends PathfinderMob implements Dialog
 
 
 
-    private void advanceDialogue() {
+    protected void advanceDialogue() {
         this.currentStep++;
         if (this.currentStep >= getScenario().lines().size()) {
             endDialogue();

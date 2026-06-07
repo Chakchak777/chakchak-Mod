@@ -46,3 +46,6 @@ Mellstroy miltiverse mod
     ordering="NONE"
     side="BOTH"
 
+[[mixins]]
+config = "chakchakmod.mixins.json"
+

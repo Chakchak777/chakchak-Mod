@@ -1,7 +1,8 @@
 package net.chakchak777.entities.custom;
 
 import net.chakchak777.blocks.ModBlocks;
-import net.chakchak777.entities.base.ChakchakGeckoDialogueMob;
+import net.chakchak777.entities.azure.CatostDispatcher;
+import net.chakchak777.entities.base.ChachakDialogueMob;
 import net.chakchak777.entities.dialogue.DialogueScenario;
 import net.chakchak777.items.ModItems;
 import net.chakchak777.network.SentDialogueLine;
@@ -24,13 +25,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.network.PacketDistributor;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.util.GeckoLibUtil;
-
 import java.util.List;
 
-public class CatostEntity extends ChakchakGeckoDialogueMob {
+public class CatostEntity extends ChachakDialogueMob {
 
     public CatostEntity(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
@@ -41,15 +38,7 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
     public boolean VodkaReward = false;
 
     public static final int FEEDINGS_FOR_FIGURINE = 5;
-    private static final RawAnimation ANIM_SLEEP = RawAnimation.begin().thenLoop("sleep");
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-
-
-    @Override
-    protected RawAnimation getStartAnimation() {
-        return RawAnimation.begin().thenLoop("sleep");
-    }
+    private final CatostDispatcher animationDispatcher = new CatostDispatcher(this);
 
     @Override
     protected List<DialogueScenario> getScenarios() {
@@ -213,9 +202,28 @@ public class CatostEntity extends ChakchakGeckoDialogueMob {
     }
 
 
+
+
     @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
+    public void tick() {
+        super.tick();
+
+        if (!level().isClientSide) {
+            if (this.isPlaying) {
+                if (this.timer > 0) {
+                    this.timer--;
+                } else {
+                    advanceDialogue();
+                }
+            }
+        }
+        if (level().isClientSide) {
+            Runnable animationRunner;
+            if (isAnimPlay()) {
+                animationRunner = animationDispatcher::sleep;
+                animationRunner.run();
+            }
+        }
     }
 }
 

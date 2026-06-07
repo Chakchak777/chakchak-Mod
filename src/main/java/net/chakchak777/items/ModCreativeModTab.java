@@ -33,6 +33,7 @@ public class ModCreativeModTab {
                         output.accept(ModBlocks.WALlPAPER_BLOCK3);
                         output.accept(ModBlocks.WALlPAPER_BLOCK4);
                         output.accept(ModItems.CATOST_SPAWN_EGG);
+                        output.accept(ModItems.PHYSIC_BOOK);
 
 
 

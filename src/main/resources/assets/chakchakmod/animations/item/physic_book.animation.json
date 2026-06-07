@@ -1,0 +1,203 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"loop": true,
+			"bones": {
+				"playerArms": {
+					"position": {
+						"vector": [2, -5, -2]
+					},
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"position": {
+						"vector": [3, -1, 2]
+					},
+					"rotation": {
+						"vector": [76.2546, -24.3684, 5.7632]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [68.4976, 21.0759, -8.0633]
+					}
+				},
+				"all": {
+					"position": {
+						"vector": [2, -5, -2]
+					}
+				},
+				"book": {
+					"position": {
+						"vector": [-6.5, 8.4, 8]
+					},
+					"rotation": {
+						"vector": [64.9633, 16.4952, -12.7992]
+					}
+				},
+				"pages": {
+					"position": {
+						"vector": [0, 0, 0]
+					},
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page1": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page2": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page3": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page4": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page5": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page6": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"attack1": {
+			"loop": true,
+			"animation_length": 0.75,
+			"bones": {
+				"playerArms": {
+					"position": {
+						"vector": [2, -5, -2]
+					},
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"position": {
+						"0": {
+							"vector": [3, -1, 2]
+						},
+						"0.29167": {
+							"vector": [4, -1, 2]
+						},
+						"0.5": {
+							"vector": [3, 0, 2]
+						},
+						"0.75": {
+							"vector": [3, -1, 2]
+						}
+					},
+					"rotation": {
+						"0": {
+							"vector": [76.2546, -24.3684, 5.7632]
+						},
+						"0.29167": {
+							"vector": [70.6412, -29.219, 7.1229]
+						},
+						"0.5": {
+							"vector": [71.4637, -24.4894, 5.3037]
+						},
+						"0.75": {
+							"vector": [76.2546, -24.3684, 5.7632]
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [68.4976, 21.0759, -8.0633]
+					}
+				},
+				"all": {
+					"position": {
+						"vector": [2, -5, -2]
+					}
+				},
+				"book": {
+					"position": {
+						"vector": [-6.5, 8.4, 8]
+					},
+					"rotation": {
+						"vector": [64.9633, 16.4952, -12.7992]
+					}
+				},
+				"pages": {
+					"position": {
+						"vector": [0, 0, 0]
+					},
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page1": {
+					"rotation": {
+						"0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, -132.5, 0]
+						}
+					}
+				},
+				"page2": {
+					"rotation": {
+						"0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, -132.5, 0]
+						}
+					}
+				},
+				"page3": {
+					"rotation": {
+						"0": {
+							"vector": [0, 0, 0]
+						},
+						"0.375": {
+							"vector": [0, 0, 0]
+						},
+						"0.75": {
+							"vector": [0, -132.5, 0]
+						}
+					}
+				},
+				"page4": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page5": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"page6": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

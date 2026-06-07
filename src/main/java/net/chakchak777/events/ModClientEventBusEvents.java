@@ -2,6 +2,7 @@ package net.chakchak777.events;
 
 import net.chakchak777.ChakchakMod;
 import net.chakchak777.gui.DialogueGui;
+import net.chakchak777.gui.UseItemProgressBar;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,5 +19,12 @@ public class ModClientEventBusEvents {
                 ResourceLocation.fromNamespaceAndPath(ChakchakMod.MODID, "dialogue_layer"),
                 new DialogueGui()
         );
+        event.registerAboveAll(
+                ResourceLocation.fromNamespaceAndPath(ChakchakMod.MODID, "item_use_progress_bar"),
+                new UseItemProgressBar()
+        );
     }
+
+
+
 }

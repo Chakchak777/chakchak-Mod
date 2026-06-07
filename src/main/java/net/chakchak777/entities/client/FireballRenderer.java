@@ -1,28 +1,28 @@
 package net.chakchak777.entities.client;
 
+
 import mod.azure.azurelib.common.render.entity.AzEntityRenderer;
 import mod.azure.azurelib.common.render.entity.AzEntityRendererConfig;
 import net.chakchak777.ChakchakMod;
-import net.chakchak777.entities.azure.CatostAnimator;
-import net.chakchak777.entities.custom.CatostEntity;
+import net.chakchak777.entities.custom.FireBallEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
-public class CatostRenderer extends AzEntityRenderer<CatostEntity> {
+public class FireballRenderer extends AzEntityRenderer<FireBallEntity> {
     private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
             ChakchakMod.MODID,
-            "geo/entity/catost.geo.json"
+            "geo/entity/fireball.geo.json"
     );
 
     private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
             ChakchakMod.MODID,
-            "textures/entity/catost.png"
+            "textures/entity/fireball.png"
     );
 
-    public CatostRenderer(EntityRendererProvider.Context context) {
+    public FireballRenderer(EntityRendererProvider.Context context) {
         super(
-                AzEntityRendererConfig.<CatostEntity>builder(GEO, TEX)
-                        .setAnimatorProvider(CatostAnimator::new).build(),
+                AzEntityRendererConfig.<FireBallEntity>builder(GEO, TEX)
+                        .build(),
                 context
         );
     }

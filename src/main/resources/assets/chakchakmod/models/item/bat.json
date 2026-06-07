@@ -1,0 +1,144 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    64,
+    64
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        -1,
+        4
+      ],
+      "translation": [
+        -3.25,
+        -18.25,
+        1
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        -1,
+        -9
+      ],
+      "translation": [
+        2,
+        -19.25,
+        1
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -1,
+        -9,
+        0
+      ],
+      "translation": [
+        -3.75,
+        -14,
+        0.25
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        8.570000000000164,
+        12.909999999999854,
+        -15.929999999999836
+      ],
+      "translation": [
+        -0.5,
+        72,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "ground": {
+      "rotation": [
+        -86.23000000000002,
+        14.099999999999909,
+        -15.0300000000002
+      ],
+      "translation": [
+        -5.25,
+        -8.75,
+        8
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "gui": {
+      "rotation": [
+        -3,
+        0,
+        -34
+      ],
+      "translation": [
+        -12.25,
+        -17.25,
+        -0.25
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "head": {
+      "rotation": [
+        -53,
+        0,
+        13
+      ],
+      "translation": [
+        -2.75,
+        -11,
+        2.75
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        -3,
+        0,
+        -34
+      ],
+      "translation": [
+        -12.75,
+        -18,
+        -0.25
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    }
+  },
+  "textures": {
+    "particle": "bat"
+  }
+}

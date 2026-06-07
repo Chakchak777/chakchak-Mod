@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "net.chakchak777.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "chakchakmod.refmap.json",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "PlayerMixin"
+  ],
+  "client": [
+    "HeldItemRendererMixin",
+    "GameRendererMixin",
+    "MinecraftMixin"
+  ]
+}
