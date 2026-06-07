@@ -1,7 +1,10 @@
 package net.chakchak777.items.custom.physicBook;
 
 import net.chakchak777.entities.custom.FireBallEntity;
+import net.chakchak777.gui.PhysicBookScreen;
+import net.chakchak777.gui.QuestMenuScreen;
 import net.chakchak777.network.SentDialogueLine;
+import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -28,9 +31,19 @@ public class PhysicBookItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level Level, Player player, InteractionHand usedHand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+        Minecraft mc = Minecraft.getInstance();
         ItemStack itemstack = player.getItemInHand(usedHand);
 
+
+
+        if (player.isCrouching()){
+            if (level.isClientSide) {
+                mc.setScreen(new PhysicBookScreen());
+                return InteractionResultHolder.consume(itemstack);
+            }
+            return InteractionResultHolder.consume(itemstack);
+        }
 
         player.startUsingItem(usedHand);
         return InteractionResultHolder.consume(itemstack);
@@ -78,6 +91,7 @@ public class PhysicBookItem extends Item {
                 SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 
         if (!level.isClientSide && livingEntity instanceof Player player) {
+            dispatcher.idle(player, stack);
             FireBallEntity fireBallEntity = new FireBallEntity(level, player);
             player.getCooldowns().addCooldown(this, 300);
             PacketDistributor.sendToPlayer((ServerPlayer) player, new SentDialogueLine("Кажется мой мозг устал, смогу только через 15 секунд ", "player", 60));

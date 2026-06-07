@@ -22,12 +22,12 @@ public class FireBallEntity extends ThrowableProjectile {
 
     public static final int LIFE_TIME = 200;
 
-    // Конструктор для спавна из книги
+
     public FireBallEntity(Level level, LivingEntity shooter) {
         super(ModEntities.FIREBALL.get(), shooter, level);
     }
 
-    // Конструктор для регистрации
+
     public FireBallEntity(EntityType<? extends ThrowableProjectile> type, Level level) {
         super(type, level);
     }
@@ -43,7 +43,7 @@ public class FireBallEntity extends ThrowableProjectile {
 
     @Override
     public void tick() {
-        this.setNoGravity(true); // Твоя гравитация отключена
+        this.setNoGravity(true);
         super.tick();
         if (!this.level().isClientSide && this.tickCount >= LIFE_TIME){
             this.discard();

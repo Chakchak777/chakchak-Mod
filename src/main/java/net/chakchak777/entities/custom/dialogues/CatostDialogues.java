@@ -16,17 +16,16 @@ public class CatostDialogues {
             )),
             new DialogueScenario(false, List.of(
                     new DialogueLine("Мррр... кто там? Я только проснулся...", 40, "catost"),
-                    new DialogueLine("Это я сучка", 40, "player"),
-                    new DialogueLine("Ну ка поясни ка за базар хуйло плешивое", 40, "catost"),
+                    new DialogueLine("Это я", 40, "player"),
+                    new DialogueLine("Ну ооо привет", 40, "catost"),
                     new DialogueLine("Ладно ладно, успокойся мабой", 40, "player"),
-                    new DialogueLine("Вот и всё блять, я дальше спать", 40, "catost")
+                    new DialogueLine("Вот и всё , я дальше спать", 40, "catost")
 
             )),
             new DialogueScenario(true, List.of(
                     new DialogueLine("Рад снова тебя видеть! У меня есть кое-что для тебя...", 40, "catost"),
                     new DialogueLine("Нука", 40, "player"),
-                    new DialogueLine("Держи водоочку", 40, "catost")
-
+                    new DialogueLine("Держи водочку", 40, "catost")
             ))
     );
 }

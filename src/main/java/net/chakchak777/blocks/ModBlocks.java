@@ -50,16 +50,16 @@ public class ModBlocks {
             ()-> new LeafletBlock(BlockBehaviour.Properties.of().noOcclusion().strength(-1).noLootTable()));
 
     public static final DeferredBlock<Block> WALlPAPER_BLOCK = registerBlock("wallpaper",
-            ()-> new LeafletBlock(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
+            ()-> new Block(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
 
     public static final DeferredBlock<Block> WALlPAPER_BLOCK2 = registerBlock("wallpaper2",
-                ()-> new LeafletBlock(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
+                ()-> new Block(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
 
     public static final DeferredBlock<Block> WALlPAPER_BLOCK3 = registerBlock("wallpaper3",
-                ()-> new LeafletBlock(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
+                ()-> new Block(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
 
     public static final DeferredBlock<Block> WALlPAPER_BLOCK4 = registerBlock("wallpaper4",
-                ()-> new LeafletBlock(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
+                ()-> new Block(BlockBehaviour.Properties.of().noOcclusion().strength(10).noLootTable()));
 
 
     public static final DeferredBlock<VodkaBlock> VODKA = registerBlockItem("vodka",
