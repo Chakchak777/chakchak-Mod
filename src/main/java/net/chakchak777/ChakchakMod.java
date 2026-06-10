@@ -3,6 +3,7 @@ package net.chakchak777;
 import com.mojang.logging.LogUtils;
 import net.chakchak777.blocks.ModBlocks;
 
+import net.chakchak777.dataComponent.ModDataComponents;
 import net.chakchak777.entities.ModEntities;
 import net.chakchak777.entities.client.CatostRenderer;
 import net.chakchak777.items.ModCreativeModTab;
@@ -36,6 +37,8 @@ public class ChakchakMod {
 
 
         ModEntities.register(modEventBus);
+
+        ModDataComponents.register(modEventBus);
 
 
 

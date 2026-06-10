@@ -2,6 +2,7 @@ package net.chakchak777.items;
 
 import net.chakchak777.ChakchakMod;
 import net.chakchak777.entities.ModEntities;
+import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
 import net.chakchak777.items.custom.physicBook.PhysicBookItem;
 import net.chakchak777.items.custom.Syringe;
 import net.chakchak777.items.custom.bat.BatItem;
@@ -88,12 +89,36 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> PHYSIC_BOOK = ITEMS.register("physic_book",
-            ()-> new PhysicBookItem(new Item.Properties()){
+            ()-> new PhysicBookItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 
                     tooltipComponents.add(Component.literal("Учебник физики за восьмой класс," +
                                     " можно читать зажав шифт и кликнув пкм")
+                            .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
+    public static final DeferredItem<Item> BUBBLES_AMMO = ITEMS.register("bubbles_ammo",
+            ()-> new Item(new Item.Properties().stacksTo(4)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+
+                    tooltipComponents.add(Component.literal("Мыльные пузыри," +
+                                    " могут использоваться как патроны для огнестрельного оружия")
+                            .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
+    public static final DeferredItem<Item> BUBBLE_GUN = ITEMS.register("bubble_gun",
+            ()-> new BubbleGunItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC), 5){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+
+                    tooltipComponents.add(Component.literal("Мыльное огнестрельное оружия" +
+                                    "требует мыльные пузыри для стрельбы")
                             .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }

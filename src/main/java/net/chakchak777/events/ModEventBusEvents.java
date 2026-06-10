@@ -23,5 +23,6 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> AzIdentityRegistry.register(ModItems.PHYSIC_BOOK.get()));
+        event.enqueueWork(() -> AzIdentityRegistry.register(ModItems.BUBBLE_GUN.get()));
     }
 }

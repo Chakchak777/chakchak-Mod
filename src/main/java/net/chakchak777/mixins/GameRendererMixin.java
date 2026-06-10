@@ -3,6 +3,7 @@ package net.chakchak777.mixins;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
 import net.chakchak777.items.custom.physicBook.PhysicBookItem;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -51,7 +52,7 @@ public class GameRendererMixin {
         )
     )
     private boolean azexamples$vanillaBobView(GameRenderer instance, PoseStack matrices, float tickDelta) {
-        return !(this.minecraft.player.getUseItem().getItem() instanceof PhysicBookItem);
+        return !(this.minecraft.player.getUseItem().getItem() instanceof PhysicBookItem  );
     }
 
     @Unique

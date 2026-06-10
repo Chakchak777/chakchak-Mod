@@ -5,9 +5,13 @@ import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.chakchak777.ChakchakMod;
 import net.chakchak777.client.DialogueLineClientState;
 import net.chakchak777.entities.ModEntities;
+import net.chakchak777.entities.client.BubbleRenderer;
 import net.chakchak777.entities.client.CatostRenderer;
 import net.chakchak777.entities.client.FireballRenderer;
+import net.chakchak777.entities.client.LightingRenderer;
 import net.chakchak777.items.ModItems;
+import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
+import net.chakchak777.items.custom.bubbleGun.BubbleGunRenderer;
 import net.chakchak777.items.custom.physicBook.PhysicBookRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -23,6 +27,8 @@ public class ClientModEvents {
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.CATOST.get(), CatostRenderer::new);
         event.registerEntityRenderer(ModEntities.FIREBALL.get(), FireballRenderer::new);
+        event.registerEntityRenderer(ModEntities.LIGHTING.get(), LightingRenderer::new);
+        event.registerEntityRenderer(ModEntities.BUBBLE.get(), BubbleRenderer::new);
     }
 
     @SubscribeEvent
@@ -31,6 +37,7 @@ public class ClientModEvents {
       //  AzItemRendererRegistry.register(BatRenderer::new, ModItems.BAT_ITEM.get());
 
         AzItemRendererRegistry.register(PhysicBookRenderer::new, ModItems.PHYSIC_BOOK.get());
+        AzItemRendererRegistry.register(BubbleGunRenderer::new, ModItems.BUBBLE_GUN.get());
     }
 
     @EventBusSubscriber(modid = ChakchakMod.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)

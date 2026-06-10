@@ -1,6 +1,7 @@
 package net.chakchak777.mixins;
 
 
+import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
 import net.chakchak777.items.custom.physicBook.PhysicBookItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemInHandRenderer;
@@ -41,11 +42,13 @@ public class HeldItemRendererMixin {
 		assert clientPlayerEntity != null;
 		final var itemStack = clientPlayerEntity.getMainHandItem();
 		final var itemStack2 = clientPlayerEntity.getOffhandItem();
-		if (mainHandItem.getItem() instanceof PhysicBookItem && ItemStack.isSameItem(mainHandItem, itemStack)) {
+		if (mainHandItem.getItem() instanceof PhysicBookItem  && ItemStack.isSameItem(mainHandItem, itemStack)||
+				mainHandItem.getItem() instanceof BubbleGunItem && ItemStack.isSameItem(mainHandItem, itemStack)) {
 			mainHandHeight = 1;
 			mainHandItem = itemStack;
 		}
-		if (offHandItem.getItem() instanceof PhysicBookItem && ItemStack.isSameItem(offHandItem, itemStack2)) {
+		if (offHandItem.getItem() instanceof PhysicBookItem && ItemStack.isSameItem(offHandItem, itemStack2)||
+				offHandItem.getItem() instanceof BubbleGunItem && ItemStack.isSameItem(offHandItem, itemStack2)) {
 			offHandHeight = 1;
 			offHandItem = itemStack2;
 		}

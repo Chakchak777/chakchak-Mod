@@ -1,8 +1,10 @@
 package net.chakchak777.entities;
 
 import net.chakchak777.ChakchakMod;
+import net.chakchak777.entities.custom.BubbleEntity;
 import net.chakchak777.entities.custom.CatostEntity;
 import net.chakchak777.entities.custom.FireBallEntity;
+import net.chakchak777.entities.custom.LightningEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -23,7 +25,19 @@ public class ModEntities {
 
     public static final Supplier<EntityType<FireBallEntity>> FIREBALL =
             ENTITY_TYPES.register("fireball", () -> EntityType.Builder.<FireBallEntity>of(FireBallEntity::new, MobCategory.MISC)
-                    .sized(0.5f, 1.15f).build("fireball"));
+                    .sized(0.5f, 0.5f).build("fireball"));
+
+
+    public static final Supplier<EntityType<LightningEntity>> LIGHTING =
+            ENTITY_TYPES.register("lighting", () -> EntityType.Builder.<LightningEntity>of(LightningEntity::new, MobCategory.MISC)
+                    .sized(1.5f, 0.5f).build("lighting"));
+
+    public static final Supplier<EntityType<BubbleEntity>> BUBBLE =
+            ENTITY_TYPES.register("bubble", () -> EntityType.Builder.<BubbleEntity>of(BubbleEntity::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f).build("bubble"));
+
+
+
 
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);

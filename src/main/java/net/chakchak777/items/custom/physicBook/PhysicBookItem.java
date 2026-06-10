@@ -1,6 +1,7 @@
 package net.chakchak777.items.custom.physicBook;
 
 import net.chakchak777.entities.custom.FireBallEntity;
+import net.chakchak777.entities.custom.LightningEntity;
 import net.chakchak777.gui.PhysicBookScreen;
 import net.chakchak777.gui.QuestMenuScreen;
 import net.chakchak777.network.SentDialogueLine;
@@ -19,6 +20,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
 
 public class PhysicBookItem extends Item {
 
@@ -92,15 +95,28 @@ public class PhysicBookItem extends Item {
 
         if (!level.isClientSide && livingEntity instanceof Player player) {
             dispatcher.idle(player, stack);
-            FireBallEntity fireBallEntity = new FireBallEntity(level, player);
+
+
+            // FIXME это крч
+            int randomInt = level.random.nextInt(0 , 2);
+           // int randomInt =1;
+            if (randomInt == 0){
+                FireBallEntity fireBallEntity = new FireBallEntity(level, player);
+                fireBallEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 0F);
+                level.addFreshEntity(fireBallEntity);
+            } else if (randomInt==1) {
+                LightningEntity lightningEntity = new LightningEntity(level, player);
+                lightningEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 4F, 0F);
+                level.addFreshEntity(lightningEntity);
+            }
+
+            if (player.isCreative()){
+                return super.finishUsingItem(stack, level, livingEntity);
+            }
             player.getCooldowns().addCooldown(this, 300);
             PacketDistributor.sendToPlayer((ServerPlayer) player, new SentDialogueLine("Кажется мой мозг устал, смогу только через 15 секунд ", "player", 60));
-            fireBallEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 0F);
-            level.addFreshEntity(fireBallEntity);
+
         }
-
-
-
         return super.finishUsingItem(stack, level, livingEntity);
     }
 
