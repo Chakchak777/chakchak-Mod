@@ -1,5 +1,6 @@
 package net.chakchak777.gui;
 
+import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
 import net.chakchak777.items.custom.physicBook.PhysicBookItem;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -13,13 +14,15 @@ public class UseItemProgressBar implements LayeredDraw.Layer {
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
-        if (player == null) return;
+        if (mc.options.hideGui||player == null) return;
 
         if (player.isUsingItem()) {
             ItemStack useStack = player.getUseItem();
 
-            // Проверяем, что этот предмет — наш таймер
-            if (useStack.getItem() instanceof PhysicBookItem) {
+
+            if (useStack.getItem() instanceof PhysicBookItem ||useStack.getItem()
+                    instanceof BubbleGunItem) {
+
                 int maxDuration = useStack.getUseDuration(player);
 
                 if (maxDuration <= 0) {

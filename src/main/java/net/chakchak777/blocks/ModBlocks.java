@@ -1,11 +1,9 @@
 package net.chakchak777.blocks;
 
 import net.chakchak777.ChakchakMod;
-import net.chakchak777.blocks.custom.EmptyBottleOfVodkaBlock;
-import net.chakchak777.blocks.custom.LeafletBlock;
-import net.chakchak777.blocks.custom.SyringeBlock;
-import net.chakchak777.blocks.custom.VodkaBlock;
+import net.chakchak777.blocks.custom.*;
 import net.chakchak777.items.ModItems;
+import net.chakchak777.items.blockItems.BubbleAmmoBlockItem;
 import net.chakchak777.items.blockItems.EmptyBottleOfVodkaBlockItem;
 import net.chakchak777.items.blockItems.VodkaBlockItem;
 import net.minecraft.world.item.BlockItem;
@@ -71,6 +69,11 @@ public class ModBlocks {
     public static final DeferredBlock<EmptyBottleOfVodkaBlock> EMPTY_BOTTLE_OF_VODKA = registerBlockItem("empty_bottle_of_vodka",
             () -> new EmptyBottleOfVodkaBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion().instabreak().noLootTable()),
             (block, properties) -> new EmptyBottleOfVodkaBlockItem(block, properties.stacksTo(1).rarity(Rarity.EPIC))
+    );
+
+    public static final DeferredBlock<BubbleAmmoBlock> BUBBLE_AMMO = registerBlockItem("bubble_ammo",
+            () -> new BubbleAmmoBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion().instabreak().noLootTable()),
+            (block, properties) -> new BubbleAmmoBlockItem(block, properties.stacksTo(4).rarity(Rarity.RARE))
     );
 
 

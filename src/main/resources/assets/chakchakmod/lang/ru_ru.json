@@ -4,6 +4,9 @@
   "item.chakchakmod.cat_food": "Кошачий корм",
   "item.chakchakmod.syringe": "Шприц",
   "item.chakchakmod.mango": "Maнго",
+  "item.chakchakmod.bat": "Бита",
+  "item.chakchakmod.physic_book": "Учебник физики",
+  "item.chakchakmod.bubble_gun": "Мыльный пистолет",
 
 
 
@@ -15,11 +18,15 @@
   "block.chakchakmod.wallpaper2": "Обои 2 Вид",
   "block.chakchakmod.wallpaper3": "Обои 3 Вид",
   "block.chakchakmod.wallpaper4": "Обои 4 Вид",
+  "block.chakchakmod.bubble_ammo": "Мыльные патроны",
 
 
   "creativetab.chakchakmod": "Chakchak Mod",
 
 
 
-  "entity.mccourse.catost": "Котость"
+  "entity.chakchakmod.catost": "Котость",
+  "entity.chakchakmod.fireball": "Огненный шар",
+  "entity.chakchakmod.lighting": "Молния",
+  "entity.chakchakmod.bubble": "Мыльный пузырь"
 }

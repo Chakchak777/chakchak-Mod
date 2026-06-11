@@ -18,6 +18,12 @@ public class BubbleEntity extends ThrowableProjectile {
 
     public int LIFE_TIME = level().random.nextInt(170, 270);
 
+    private float damage =5;
+
+    public void setDamage(float damage){
+        this.damage = damage;
+    }
+
 
     public BubbleEntity(Level level, LivingEntity shooter) {
         super(ModEntities.BUBBLE.get(), shooter, level);
@@ -58,7 +64,7 @@ public class BubbleEntity extends ThrowableProjectile {
 
             Vec3 old = target.getDeltaMovement();
 
-            target.hurt(this.damageSources().thrown(this, this.getOwner()), 5.0F);
+            target.hurt(this.damageSources().thrown(this, this.getOwner()), damage);
 
             target.setDeltaMovement(old);
 

@@ -17,14 +17,14 @@ public class ModCreativeModTab {
 
 
     public static final Supplier<CreativeModeTab> CHAKCHAK_MOD_CREATIVE_TAB = CREATIVE_MODE_TAB.register("classic_vortex_items_tab",
-            ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.VODKA.asItem()))
+            ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.VODKA))
                     .title(Component.translatable("creativetab.chakchakmod"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CATOST_FIGURINE);
                         output.accept(ModItems.MANGO);
                         output.accept(ModItems.CAT_FOOD);
-                        output.accept(ModBlocks.VODKA.asItem());
-                        output.accept(ModBlocks.EMPTY_BOTTLE_OF_VODKA.asItem());
+                        output.accept(ModBlocks.VODKA);
+                        output.accept(ModBlocks.EMPTY_BOTTLE_OF_VODKA);
                         output.accept(ModItems.SYRINGE);
                         output.accept(ModBlocks.SYRINGE_BLOCK);
                         output.accept(ModBlocks.LEAFLET);
@@ -32,8 +32,15 @@ public class ModCreativeModTab {
                         output.accept(ModBlocks.WALlPAPER_BLOCK2);
                         output.accept(ModBlocks.WALlPAPER_BLOCK3);
                         output.accept(ModBlocks.WALlPAPER_BLOCK4);
-                        output.accept(ModItems.CATOST_SPAWN_EGG);
                         output.accept(ModItems.PHYSIC_BOOK);
+                        output.accept(ModItems.BUBBLE_GUN);
+                        output.accept(ModBlocks.BUBBLE_AMMO);
+
+
+                        output.accept(ModItems.CATOST_SPAWN_EGG);
+
+
+
 
 
 

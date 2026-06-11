@@ -4,6 +4,7 @@ import mod.azure.azurelib.common.render.item.AzItemRenderer;
 import mod.azure.azurelib.common.render.item.AzItemRendererConfig;
 import net.chakchak777.ChakchakMod;
 import net.chakchak777.items.custom.physicBook.PhysicBookAnimator;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 
@@ -23,6 +24,8 @@ public class BubbleGunRenderer extends AzItemRenderer {
                 AzItemRendererConfig.builder(GEO, TEX)
                         .setAnimatorProvider(BubbleGunAnimator::new)
                         .disableAnimationInContexts(ItemDisplayContext.GUI)
+                        .setAlpha(1.0F)
+                        .setRenderType(itemStack -> RenderType.entityTranslucent(TEX))
                         .setShouldAnimateInContext(context -> context != ItemDisplayContext.GUI && context != ItemDisplayContext.FIXED) // Custom animation logic with predicate
                         .build()
         );

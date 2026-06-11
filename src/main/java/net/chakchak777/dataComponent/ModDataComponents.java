@@ -21,6 +21,10 @@ public class ModDataComponents {
                             .networkSynchronized(ByteBufCodecs.VAR_INT)
                             .build());
 
+    public static final Supplier<DataComponentType<Integer>> BUBBLE_GUN_MODE =
+            DATA_COMPONENTS.register("bubble_gun_mode", () ->
+                    DataComponentType.<Integer>builder().persistent(Codec.INT).build());
+
     public static void register(IEventBus eventBus){
         DATA_COMPONENTS.register(eventBus);
     }

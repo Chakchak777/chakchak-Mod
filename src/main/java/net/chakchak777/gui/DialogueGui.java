@@ -41,7 +41,7 @@ public class DialogueGui implements LayeredDraw.Layer {
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer player = mc.player;
 
-        if (player == null) {
+        if (mc.options.hideGui||player == null) {
             return;
         }
         PlayerSkin playerSkin = player.getSkin();

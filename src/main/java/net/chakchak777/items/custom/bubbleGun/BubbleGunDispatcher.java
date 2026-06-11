@@ -6,9 +6,17 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 
 public class BubbleGunDispatcher {
-    private static final AzCommand FIRE = AzCommand.create(
+    private static final AzCommand FIRE_SHOT     = AzCommand.create(
             "gun_controller",
-            "fire", AzPlayBehaviors.LOOP);
+            "fireshot", AzPlayBehaviors.LOOP);
+
+    private static final AzCommand FIRE_SEMI  = AzCommand.create(
+            "gun_controller",
+            "firesemi", AzPlayBehaviors.LOOP);
+
+    private static final AzCommand FIRE_AUTO  = AzCommand.create(
+            "gun_controller",
+            "fireauto", AzPlayBehaviors.LOOP);
 
 
     private static final AzCommand IDLE = AzCommand.create(
@@ -24,9 +32,19 @@ public class BubbleGunDispatcher {
             "reload", AzPlayBehaviors.PLAY_ONCE);
 
 
-    public void fire( Entity entity, ItemStack itemStack) {
-        FIRE.sendForItem(entity, itemStack);
+    public void fire_shot( Entity entity, ItemStack itemStack) {
+        FIRE_SHOT.sendForItem(entity, itemStack);
     }
+
+    public void fire_semi_auto( Entity entity, ItemStack itemStack) {
+        FIRE_SEMI.sendForItem(entity, itemStack);
+    }
+
+    public void fire_auto( Entity entity, ItemStack itemStack) {
+        FIRE_AUTO.sendForItem(entity, itemStack);
+    }
+
+
 
     public void idle(Entity entity, ItemStack itemStack) {
         IDLE.sendForItem(entity, itemStack);

@@ -1,0 +1,68 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:translucent",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "chakchakmod:item/bubble_ammo",
+		"particle": "chakchakmod:item/bubble_ammo"
+
+	},
+	"elements": [
+		{
+			"from": [10.41318, 0, 9.0076],
+			"to": [13.41318, 3, 12.0076],
+			"rotation": {"angle": -45, "axis": "y", "origin": [11.91318, 1.5, 10.5076]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"east": {"uv": [0, 3, 3, 6], "texture": "#1"},
+				"south": {"uv": [3, 0, 6, 3], "texture": "#1"},
+				"west": {"uv": [3, 3, 6, 6], "texture": "#1"},
+				"up": {"uv": [3, 9, 0, 6], "texture": "#1"},
+				"down": {"uv": [9, 0, 6, 3], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6.41318, 0, 6.1076],
+			"to": [9.41318, 3, 9.1076],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7.91318, 1.5, 7.6076]},
+			"faces": {
+				"north": {"uv": [3, 3, 6, 6], "texture": "#1"},
+				"east": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"south": {"uv": [0, 3, 3, 6], "texture": "#1"},
+				"west": {"uv": [3, 0, 6, 3], "texture": "#1"},
+				"up": {"uv": [0, 6, 3, 9], "texture": "#1"},
+				"down": {"uv": [6, 0, 9, 3], "texture": "#1"}
+			}
+		},
+		{
+			"from": [2.91318, 0, 10.2076],
+			"to": [5.91318, 3, 13.2076],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [4.41318, 1.5, 11.7076]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"east": {"uv": [0, 3, 3, 6], "texture": "#1"},
+				"south": {"uv": [3, 0, 6, 3], "texture": "#1"},
+				"west": {"uv": [3, 3, 6, 6], "texture": "#1"},
+				"up": {"uv": [0, 6, 3, 9], "texture": "#1"},
+				"down": {"uv": [6, 0, 9, 3], "texture": "#1"}
+			}
+		},
+		{
+			"from": [10.01318, 0, 2.5076],
+			"to": [13.01318, 3, 5.5076],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [11.51318, 1.5, 4.0076]},
+			"faces": {
+				"north": {"uv": [3, 3, 6, 6], "texture": "#1"},
+				"east": {"uv": [0, 0, 3, 3], "texture": "#1"},
+				"south": {"uv": [0, 3, 3, 6], "texture": "#1"},
+				"west": {"uv": [3, 0, 6, 3], "texture": "#1"},
+				"up": {"uv": [0, 6, 3, 9], "texture": "#1"},
+				"down": {"uv": [6, 0, 9, 3], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+
+	}
+}

@@ -1,6 +1,7 @@
 package net.chakchak777.events;
 
 import net.chakchak777.ChakchakMod;
+import net.chakchak777.gui.BubbleGui;
 import net.chakchak777.gui.DialogueGui;
 import net.chakchak777.gui.UseItemProgressBar;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,10 @@ public class ModClientEventBusEvents {
         event.registerAboveAll(
                 ResourceLocation.fromNamespaceAndPath(ChakchakMod.MODID, "item_use_progress_bar"),
                 new UseItemProgressBar()
+        );
+        event.registerAboveAll(
+                ResourceLocation.fromNamespaceAndPath(ChakchakMod.MODID, "bubble_gui"),
+                new BubbleGui()
         );
     }
 

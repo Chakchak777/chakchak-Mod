@@ -1,7 +1,6 @@
 package net.chakchak777.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
-
 import net.chakchak777.blocks.ModBlocks;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -11,12 +10,13 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class VodkaBlock extends BlockItemBase {
+public class BubbleAmmoBlock extends BlockItemBase{
 
-    public static final IntegerProperty CLICKS = IntegerProperty.create("clicks", 0, 2);
-    public static final MapCodec<VodkaBlock> CODEC = simpleCodec(VodkaBlock::new);
+    public static final IntegerProperty CLICKS = IntegerProperty.create("clicks", 0, 4);
+    public static final MapCodec<BubbleAmmoBlock> CODEC = simpleCodec(BubbleAmmoBlock::new);
 
-    public VodkaBlock(Properties properties) {
+
+    public BubbleAmmoBlock(Properties properties) {
         super(properties);
     }
 
@@ -27,12 +27,12 @@ public class VodkaBlock extends BlockItemBase {
 
     @Override
     protected int getMaxClicks() {
-        return 2;
+        return 4;
     }
 
     @Override
     protected ItemStack getBaseItem() {
-        return ModBlocks.VODKA.toStack();
+        return ModBlocks.BUBBLE_AMMO.toStack();
     }
 
     @Override
@@ -44,18 +44,18 @@ public class VodkaBlock extends BlockItemBase {
     protected SoundEvent getPlaceSound() {
         return SoundEvents.GLASS_PLACE;
     }
-    public static final VoxelShape NS_SHAPE = Block.box(4, 0, 2.5, 12, 14, 13.5);
 
-    public static final VoxelShape WE_SHAPE = Block.box(2.5, 0, 4, 13.5, 14, 12);
+    public static final VoxelShape NSWE_SHAPE = Block.box(2, 0, 2, 14, 3, 14);
+
 
     @Override
     protected VoxelShape getNS_Shape() {
-        return NS_SHAPE;
+        return NSWE_SHAPE ;
     }
 
     @Override
     protected VoxelShape getWE_Shape() {
-        return WE_SHAPE;
+        return NSWE_SHAPE;
     }
 
     @Override
@@ -68,4 +68,3 @@ public class VodkaBlock extends BlockItemBase {
         return CODEC;
     }
 }
-

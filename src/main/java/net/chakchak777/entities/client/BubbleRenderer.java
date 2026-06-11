@@ -9,6 +9,7 @@ import net.chakchak777.ChakchakMod;
 import net.chakchak777.entities.custom.BubbleEntity;
 import net.chakchak777.entities.custom.LightningEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -30,7 +31,10 @@ public class BubbleRenderer extends AzEntityRenderer<BubbleEntity> {
     public BubbleRenderer(EntityRendererProvider.Context context) {
         super(
                 AzEntityRendererConfig.<BubbleEntity>builder(GEO, TEX)
-                        .build(),
+                        .setAlpha(1.0F)
+                        .setRenderType(bubbleEntity -> RenderType.entityTranslucent(TEX))
+
+                .build(),
                 context
         );
     }
