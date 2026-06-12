@@ -4,6 +4,7 @@ import net.chakchak777.entities.ModEntities;
 import net.chakchak777.items.ModItems;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 
 public class FireBallEntity extends ThrowableProjectile {
 
@@ -48,6 +50,14 @@ public class FireBallEntity extends ThrowableProjectile {
         if (!this.level().isClientSide && this.tickCount >= LIFE_TIME){
             this.discard();
         }
+        Vec3 motion = this.getDeltaMovement();
+        double horizontalDist = motion.horizontalDistance();
+
+        this.yRotO = this.getYRot();
+        this.xRotO = this.getXRot();
+
+        this.setYRot((float)(Mth.atan2(motion.x, motion.z) * (180.0D / Math.PI)));
+        this.setXRot((float)(Mth.atan2(motion.y, horizontalDist) * (180.0D / Math.PI)));
     }
 
     @Override

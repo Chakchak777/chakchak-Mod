@@ -35,9 +35,11 @@ public class ModCreativeModTab {
                         output.accept(ModItems.PHYSIC_BOOK);
                         output.accept(ModItems.BUBBLE_GUN);
                         output.accept(ModBlocks.BUBBLE_AMMO);
+                        output.accept(ModItems.PHYSIC_GLASSES);
 
 
                         output.accept(ModItems.CATOST_SPAWN_EGG);
+                        output.accept(ModItems.RAT_SPAWN_EGG);
 
 
 

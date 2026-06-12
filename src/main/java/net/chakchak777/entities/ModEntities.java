@@ -1,10 +1,7 @@
 package net.chakchak777.entities;
 
 import net.chakchak777.ChakchakMod;
-import net.chakchak777.entities.custom.BubbleEntity;
-import net.chakchak777.entities.custom.CatostEntity;
-import net.chakchak777.entities.custom.FireBallEntity;
-import net.chakchak777.entities.custom.LightningEntity;
+import net.chakchak777.entities.custom.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -35,6 +32,11 @@ public class ModEntities {
     public static final Supplier<EntityType<BubbleEntity>> BUBBLE =
             ENTITY_TYPES.register("bubble", () -> EntityType.Builder.<BubbleEntity>of(BubbleEntity::new, MobCategory.MISC)
                     .sized(0.25f, 0.25f).build("bubble"));
+
+    public static final Supplier<EntityType<RatEntity>> RAT =
+            ENTITY_TYPES.register("rat", ()->
+                    EntityType.Builder.of(RatEntity::new, MobCategory.CREATURE)
+                            .sized(0.5F, 0.4F).build("rat"));
 
 
 

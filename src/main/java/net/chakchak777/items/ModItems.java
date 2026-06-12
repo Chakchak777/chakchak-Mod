@@ -7,6 +7,7 @@ import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
 import net.chakchak777.items.custom.physicBook.PhysicBookItem;
 import net.chakchak777.items.custom.Syringe;
 import net.chakchak777.items.custom.bat.BatItem;
+import net.chakchak777.items.custom.whistle.WhistleItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
@@ -26,6 +27,10 @@ public class ModItems {
 
     public static final DeferredItem<Item> CATOST_SPAWN_EGG = ITEMS.register("catost_spawn_egg",
             ()-> new DeferredSpawnEggItem(ModEntities.CATOST, 0x1cb018, 0xf4ea00,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> RAT_SPAWN_EGG = ITEMS.register("rat_spawn_egg",
+            ()-> new DeferredSpawnEggItem(ModEntities.RAT, 0xFF808080, 0xFFF9E02E,
                     new Item.Properties()));
 
     public static final DeferredItem<Item> CATOST_FIGURINE = ITEMS.register("catost_figurine",
@@ -89,7 +94,7 @@ public class ModItems {
                 }
             });
 
-    public static final DeferredItem<Item> PHYSIC_BOOK = ITEMS.register("physic_book",
+    public static final DeferredItem<PhysicBookItem> PHYSIC_BOOK = ITEMS.register("physic_book",
             ()-> new PhysicBookItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)){
                 @Override
                 public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
@@ -102,9 +107,19 @@ public class ModItems {
             });
 
 
-    public static final DeferredItem<Item> BUBBLE_GUN = ITEMS.register("bubble_gun",
+    public static final DeferredItem<BubbleGunItem> BUBBLE_GUN = ITEMS.register("bubble_gun",
             ()-> new BubbleGunItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC), 100)
                 );
+
+    public static final DeferredItem<WhistleItem> WHISTLE = ITEMS.register("whistle",
+            ()-> new WhistleItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC))
+    );
+
+    public static final DeferredItem<ArmorItem> PHYSIC_GLASSES = ITEMS.register("physic_glasses",
+            ()->new ArmorItem(ModArmorMaterials.PHYSIC, ArmorItem.Type.HELMET, new Item.Properties().rarity(Rarity.EPIC)
+                    .stacksTo(1)));
+
+
 
 
 

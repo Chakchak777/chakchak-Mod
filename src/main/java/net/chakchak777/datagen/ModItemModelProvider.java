@@ -15,6 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
 
         withExistingParent(ModItems.CATOST_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.RAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
     }
 }

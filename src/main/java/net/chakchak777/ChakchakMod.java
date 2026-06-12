@@ -4,12 +4,15 @@ import com.mojang.logging.LogUtils;
 import net.chakchak777.blocks.ModBlocks;
 
 import net.chakchak777.dataComponent.ModDataComponents;
+import net.chakchak777.effects.ModEffects;
 import net.chakchak777.entities.ModEntities;
 import net.chakchak777.entities.client.CatostRenderer;
+import net.chakchak777.items.ModArmorMaterials;
 import net.chakchak777.items.ModCreativeModTab;
 import net.chakchak777.items.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.effect.MobEffect;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -35,10 +38,13 @@ public class ChakchakMod {
 
         ModBlocks.register(modEventBus);
 
-
         ModEntities.register(modEventBus);
 
         ModDataComponents.register(modEventBus);
+
+        ModArmorMaterials.register(modEventBus);
+
+        ModEffects.register(modEventBus);
 
 
 

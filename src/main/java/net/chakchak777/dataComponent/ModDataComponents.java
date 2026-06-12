@@ -25,6 +25,16 @@ public class ModDataComponents {
             DATA_COMPONENTS.register("bubble_gun_mode", () ->
                     DataComponentType.<Integer>builder().persistent(Codec.INT).build());
 
+    public static final Supplier<DataComponentType<Integer>> RATS_COUNT =
+            DATA_COMPONENTS.register("rats_count", () ->
+                    DataComponentType.<Integer>builder()
+                            .persistent(Codec.INT)
+                            .networkSynchronized(ByteBufCodecs.VAR_INT)
+                            .build());
+
+
+
+
     public static void register(IEventBus eventBus){
         DATA_COMPONENTS.register(eventBus);
     }

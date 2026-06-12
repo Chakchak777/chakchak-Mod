@@ -2,6 +2,7 @@ package net.chakchak777.gui;
 
 import net.chakchak777.items.custom.bubbleGun.BubbleGunItem;
 import net.chakchak777.items.custom.physicBook.PhysicBookItem;
+import net.chakchak777.items.custom.whistle.WhistleItem;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -21,7 +22,8 @@ public class UseItemProgressBar implements LayeredDraw.Layer {
 
 
             if (useStack.getItem() instanceof PhysicBookItem ||useStack.getItem()
-                    instanceof BubbleGunItem) {
+                    instanceof BubbleGunItem|useStack.getItem()
+                    instanceof WhistleItem) {
 
                 int maxDuration = useStack.getUseDuration(player);
 

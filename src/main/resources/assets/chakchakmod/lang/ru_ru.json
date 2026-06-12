@@ -1,5 +1,6 @@
 {
   "item.chakchakmod.catost_spawn_egg": "Яйцо Призыва Котости",
+  "item.chakchakmod.rat_spawn_egg": "Яйцо Призыва Крысы",
   "item.chakchakmod.catost_figurine": "Фигурка Котости",
   "item.chakchakmod.cat_food": "Кошачий корм",
   "item.chakchakmod.syringe": "Шприц",
@@ -7,6 +8,9 @@
   "item.chakchakmod.bat": "Бита",
   "item.chakchakmod.physic_book": "Учебник физики",
   "item.chakchakmod.bubble_gun": "Мыльный пистолет",
+
+
+  "item.chakchakmod.physic_glasses": "Очки Физмата",
 
 
 
@@ -24,9 +28,15 @@
   "creativetab.chakchakmod": "Chakchak Mod",
 
 
+  "effect.chakchakmod.physics_knowledge": "Знание Физики",
+
+
 
   "entity.chakchakmod.catost": "Котость",
   "entity.chakchakmod.fireball": "Огненный шар",
   "entity.chakchakmod.lighting": "Молния",
-  "entity.chakchakmod.bubble": "Мыльный пузырь"
+  "entity.chakchakmod.bubble": "Мыльный пузырь",
+  "entity.chakchakmod.rat": "Крыса"
+
+
 }
